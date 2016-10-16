@@ -1,1 +1,1 @@
-# Messaging-API-Libraries-SDK
+# Messaging-SCG-Node.js
