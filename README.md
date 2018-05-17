@@ -1,24 +1,28 @@
 ## Structure of SCG SDK
-This SDK provides the APIs to access Syniverse Common Gateway, it was implemented with ES2015(ES6), you need nodejs 6.3+, before you implementing your tasks with this SDK, you need run 
+This SDK provides the APIs to access Syniverse Common Gateway, it was implemented with ES2015(ES6), you need nodejs 6.3+ for this SDK. Before you implementing your tasks with this SDK, you need run 
 
 ```
  npm install
 ```
 
-to install the dependence libraries, then you need get access token and related senderId and fill them into the auth.json.
+to install the dependence libraries, then you need get access token and fill the value in the examples/auth.js.
 
 There are detail usage of each API in the examples folder, and you can check out the data models under /lib/model and related API under /lib/api 
 
 ```
--- |---examples      //the examples folder of the SDK
+---|---examples      //the examples folder of the SDK
    |    |
    |    ---es6       //ES6 examples 
-   |---auth.js       //Access token, API gateway
-   |---shared.js     //Some tools for those examples.
+   |    |
+   |    ---auth.js       //Access token, API gateway
+   |    |
+   |    ---shared.js     //Some utility tools for those examples.
+   |
    |---lib
    |    |- api       //APIs
    |    |- core      //Some internal APIs you can ignore
    |    |- model     //This folder contains all data models
+   |
    |---node_modules //This folder will be filled after running 'npm install'
    |---index.js     //The harness of the SDK
    |---package.json //dependency configurations
