@@ -1,20 +1,19 @@
 ## Structure of SCG SDK
-This SDK provides the APIs to access Syniverse Common Gateway, it was implemented with ES2015(ES6), you need nodejs 6.3+ for this SDK. Before you implementing your tasks with this SDK, you need run 
+This SDK provides the APIs to access Syniverse Common Gateway, since it was implemented with ES2015(ES6), you need nodejs 6.3+ for this SDK. Before you implementing your tasks with this SDK, you need run 
 
 ```
  npm install
 ```
 
-to install the dependence libraries, then you need get access token and fill the value in the examples/auth.js.
+to install the dependence libraries, then you need get access token and fill the related value in the/auth.js.
 
-There are detail usage of each API in the examples folder, and you can check out the data models under /lib/model and related API under /lib/api 
+There are detail usage of each API in the examples folder, and you can check out the data models under /lib/model and related APIs under /lib/api 
 
 ```
 ---|---examples      //the examples folder of the SDK
    |    |
    |    ---es6       //ES6 examples 
    |    |
-   |    ---auth.js       //Access token, API gateway
    |    |
    |    ---shared.js     //Some utility tools for those examples.
    |
@@ -23,6 +22,7 @@ There are detail usage of each API in the examples folder, and you can check out
    |    |- core      //Some internal APIs you can ignore
    |    |- model     //This folder contains all data models
    |
+   |---auth.js       //The file contains the access token and gateway server url
    |---node_modules //This folder will be filled after running 'npm install'
    |---index.js     //The harness of the SDK
    |---package.json //dependency configurations
@@ -38,19 +38,19 @@ If you want to use one feature of the SDK, first, you need import the related mo
 import MessageRequest from '../../lib/model/messageRequest';
 import MessageRequestApi from '../../lib/api/messageRequests';
 
-const sharedResource = require('../shared');
 ```
 Then you need create the related model object, for example, I want to send SMS
 ```javascript
-let req = new MessageRequest({from: sharedResource.getTestSender(),
-        to: sharedResource.getTestSMSRecv(),
+let req = new MessageRequest({from: '', //The sender_id, you also need get the sender_id
+        to: '', // The SMS receiver
         verify_number: false,
         body: "Test SMS message from Nodejs SDK. @" + sharedResource.getTimeString(new Date(Date.now()))
     });
 ```
 Before you call the MessageRequest API, you need create the API object.
 ```javascript
-const api = new MessageRequestApi(sharedResource.getAuth(), sharedResource.getService());
+const auth = require('../auth.js'); 
+const api = new MessageRequestApi(auth, "https://api.syniverse.com");
 ```
 Then you can call the API to fire the SMS with callback processing.
 ```javascript

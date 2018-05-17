@@ -28,7 +28,7 @@
 'use strict';
 
 //refer to the json auth file, make sure the token is correct
-var authConfig = require('./auth_nj.js');
+var authConfig = require('../auth.js');
 
 module.exports = {
     getAuth: function() {
@@ -43,13 +43,16 @@ module.exports = {
         return srv;
     },
     getTestSender: function() {
-        return authConfig.from;
+        return 'Your sender_id Here';
     },
     getVoiceSender: function() {
         return this.getTestSender();
     },
+	getMMSSender: function() {
+        return this.getTestSender();
+    },
     getTestSMSRecv: function() {
-        return ["+17205368411"];
+        return ["+18881238888"]; //replace "+18881238888" with your test number, you can add multiple since it is array.
     },
     getTimeString: function(dt) {
         return dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate() + " " + dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
