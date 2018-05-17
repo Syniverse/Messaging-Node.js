@@ -44,12 +44,12 @@ Then you need create the related model object, for example, I want to send SMS
 let req = new MessageRequest({from: '', //The sender_id, you also need get the sender_id
         to: '', // The SMS receiver
         verify_number: false,
-        body: "Test SMS message from Nodejs SDK. @" + sharedResource.getTimeString(new Date(Date.now()))
+        body: "Test SMS message from Nodejs SDK."
     });
 ```
 Before you call the MessageRequest API, you need create the API object.
 ```javascript
-const auth = require('../auth.js'); 
+const auth = require('../auth.js'); //point to right auth.js file which contains the token 
 const api = new MessageRequestApi(auth, "https://api.syniverse.com");
 ```
 Then you can call the API to fire the SMS with callback processing.
