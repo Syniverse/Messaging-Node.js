@@ -111,7 +111,7 @@ const auth = require('../auth.js');
 //create contactApi object, pass the auth configuration and the Gateway url
 const contactApi = new ContactApi(auth, 'https://api.syniverse.com');
 //Create a new contact
-let contact = new Contact({first_name:'John', last_name:'Doe', primary_mdn:'18131117121'});
+let contact = new Contact({first_name:'John', last_name:'Doe', primary_mdn:'123456789'});
 //call create_contact API with contact object and callback to create the contact
 contactApi.create_contact(contact, (err, res) => {
     //If the operate was success, err will be filled with null, res will be filled with the contact ID
@@ -131,7 +131,7 @@ contactApi.create_contact(contact, (err, res) => {
             if (res1) {
                 //res1 is the contact object, let's update the primary mdn
                 let contact_ = res1;
-                contact_.primary_mdn = "17201112311";
+                contact_.primary_mdn = "923456781";
                 //call update API
                 contactApi.update_contact(contact_, (err_update) => {
                     //if update was successful, err_update will be null
