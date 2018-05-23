@@ -154,7 +154,7 @@ const auth = require('../auth.js');
 const api = new MessageRequestApi(auth, 'https://api.syniverse.com');
 //Create the messageRequest object, you need get your own sender_id for this API
 let recv = '123456789';
-let req = new MessageRequest({from:`sender_id:tcS8h40LXgvJsGMQI93WK4`, to:recv,
+let req = new MessageRequest({from:`tcS8h40LXgvJsGMQI93WK4`, to:recv,
     body:'Hello World!'});
 api.create_message(req, (err, res) => {
     if (err) {
@@ -215,7 +215,7 @@ attachmentApi.create_attachment(att, (err, res) => {
         let attachmentIds = [];
         attachmentIds.push(res.id);
         //Create MMS request
-        let req = new MessageRequest({from: 'sender_id:tcS8h40LXgvJsGMQI93WK4',
+        let req = new MessageRequest({from: 'tcS8h40LXgvJsGMQI93WK4',
             to: "123456789",
             verify_number: false,
             attachments: attachmentIds,
