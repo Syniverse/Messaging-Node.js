@@ -56,10 +56,10 @@ Then you can call the API to fire the SMS with callback processing.
 ```javascript
 api.create_message(req, (err, res) => {
     if (err) {
-        sharedResource.dbgOut(err);
+        console.log(err);
     }
     if (res) {
-        sharedResource.dbgOut(res);
+        console.log(res);
     }
 })
 ```
