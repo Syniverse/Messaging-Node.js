@@ -65,7 +65,6 @@ api.create_message(req, (err, res) => {
 ```
 If the SMS was sent successful, the callback err will be the null, and the res will contain the request id created, if not, the related error message will be inside the err parameter.
 
-The tool sharedResource.dbgOut is for dumping the string and object into the console, it was used in many places in the examples of the SDK, you can also use it for debugging. 
 
 ## Some examples
 # Listing Sender Id's
