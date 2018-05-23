@@ -83,9 +83,9 @@ senderIdApi.list_senderids((err, res) => {
     //err: contain the error message if any problem happened
     //res: if it was successful, res will contain the list of available senderId
     if (res && res.list.length > 0) {
-        foreach(let item : res.list) {
-            console.log(`Sender id ${item.id} has capabilities ${item.capabilities}`);
-        }
+        res.list.foreach((item) => {
+           console.log(`Sender id ${item.id} has capabilities ${item.capabilities}`); 
+        })
     }
 }
 ```
