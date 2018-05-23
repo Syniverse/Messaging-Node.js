@@ -1,4 +1,4 @@
-## Structure of SCG SDK
+# Structure of SCG SDK
 This SDK provides the APIs to access Syniverse Common Gateway, since it was implemented with ES2015(ES6), you need nodejs 6.3+ for this SDK. Before you implementing your tasks with this SDK, you need run 
 
 ```
@@ -30,7 +30,7 @@ There are detail usage of each API in the examples folder, and you can check out
 
 ```
 
-## How to use SCG SDK
+# How to use SCG SDK
 After you got the dependencies installed and filled the auth.js with the correct token, you can start write your own code with the SDK.
 
 If you want to use one feature of the SDK, first, you need import the related model and API
@@ -66,8 +66,8 @@ api.create_message(req, (err, res) => {
 If the SMS was sent successful, the callback err will be the null, and the res will contain the request id created, if not, the related error message will be inside the err parameter.
 
 
-## Some examples
-### Listing Sender Id's
+# Some examples
+## Listing Sender Id's
 If you want to list available Sender Ids, it can be dibe as easy as:
 ```javascript
 //Import sender id data model
@@ -100,7 +100,7 @@ Sender id dY2GycQpj6OE1x2mH1Ezc6 has capabilities [VOICE]
 Sender id KdNRN6dl5IkwIH5B829XJ2 has capabilities [MMS, SMS]
 Sender id tcS8h40LXgvJsGMQI93WK4 has capabilities [MMS, SMS]
 ```
-# Adding and updating a Contact
+## Adding and updating a Contact
 ```javascript
 //Import contact data model
 import Contact from '../../lib/model/contact';
@@ -142,7 +142,7 @@ contactApi.create_contact(contact, (err, res) => {
     }
 })
 ```
-# Sending a SMS to a GSM number
+## Sending a SMS to a GSM number
 ```javascript
 //Import messagrequest data model
 import MessageRequest from '../../lib/model/messageRequest';
@@ -172,19 +172,19 @@ This should produce output similar to:
 ```
 Sent message request aQWY9PeMCO01TEH9bk1ek5
 ```
-# Sending a Message to a Contact
+## Sending a Message to a Contact
 This works as above, except for the recv value change to something like this 
 ```javascript
 let contactId = '<Id of an existing contact>';
 let recv = `contact:${contactId}`;
 ```
-# Sending a Message to a Group
+## Sending a Message to a Group
 This works as sending a SMS to a GSM number, except for the recv value change to something like this 
 ```javascript
 let groupId = '<Id of an existing contact group Id>';
 let recv = `group:${groupId}`;
 ```
-# Sending a MMS with an attachment
+## Sending a MMS with an attachment
 ```javascript
 //Import attachment model data
 import Attachment from '../../lib/model/attachment';
@@ -241,7 +241,7 @@ This should produce output similar to:
 Uploaded attachment wMjURamVl9ITSXRJSkMoR4
 Sent message request 9NeqCbNXBYvRO73jC2rbc5
 ```
-# Checking the state of a Message Request
+## Checking the state of a Message Request
 ```javascript
 //Import messagrequest data model
 import MessageRequest from '../../lib/model/messageRequest';
@@ -271,5 +271,5 @@ This should produce output similar to:
 ```
 Message Request qteDxVrAhlMlmTwDrMAvMM is in state COMPLETED with 2 delivered and 0 failed messages
 ```
-## Dive Deep
+# Dive Deep
 Above examples provided the basic usage of this SDK, the code in examples folder provided more usages, if you want to dive deep, you need look into the APIs under lib/api folder, also those models definition under lib/model folder.
