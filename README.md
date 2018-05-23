@@ -67,7 +67,7 @@ If the SMS was sent successful, the callback err will be the null, and the res w
 
 
 ## Some examples
-# Listing Sender Id's
+### Listing Sender Id's
 If you want to list available Sender Ids, it can be dibe as easy as:
 ```javascript
 //Import sender id data model
