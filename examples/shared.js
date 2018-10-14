@@ -34,8 +34,8 @@ module.exports = {
     getAuth: function() {
         return authConfig;
     },
-    getService: function() {
-        var srv = authConfig.srv;
+    getService: function(auth) {
+        var srv = (auth && auth.srv) ? auth.srv : authConfig.srv;
         if (!srv) {
             srv = `http://127.0.0.1:8080`;
         }
