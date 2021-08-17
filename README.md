@@ -142,7 +142,7 @@ contactApi.create_contact(contact, (err, res) => {
     }
 })
 ```
-## Sending a SMS to a GSM number
+## Sending a SMS to a Mobile number
 ```javascript
 //Import messagrequest data model
 import MessageRequest from '../../lib/model/messageRequest';
