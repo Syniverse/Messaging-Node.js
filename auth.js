@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-//This config defines the token, you need get the token from our sales
+//This config defines the token, you need get the token from your Syniverse account application
 const auth = {
   "token": "",
   "srv": "https://api.syniverse.com"
